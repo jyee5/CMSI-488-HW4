@@ -84,5 +84,5 @@ function runTests(moduleName, matchingFunction) {
   })
 }
 
-// runTests('Regex', regexMatches)
+runTests('Regex', regexMatches)
 runTests('Ohm', ohmMatches)

@@ -1,9 +1,9 @@
 {
-  "name": "homework03",
+  "name": "homework04",
   "version": "1.0.0",
-  "description": "Homework 03",
+  "description": "Homework 04",
   "type": "module",
-  "main": "grammar_hw03.js",
+  "main": "grammar_hw04.js",
   "scripts": {
     "test": "c8 node_modules/.bin/mocha"
   },

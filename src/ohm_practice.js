@@ -43,7 +43,16 @@ const grammars = {
   mLComment: `mLComment {
     mLComment = "(*"(~"*)"any)*"*)"
   }`,
-  notDogDoorDenNoLookAround: ``,
+  notDogDoorDenNoLookAround: `notDogDoorDenNoLookAround {
+    notDogDoorDenNoLookAround = keyword letter+    	 								--anyWithKeywords
+    							| "doo" ("A".."Z" | "a".."q" | "s".."z") letter* 						--doo
+                                | "do" ("A".."Z" | "a".."f" | "h".."n" |"p".."z") letter*   		   --do
+                                | "de" ("A".."Z" | "a".."m" | "o".."z") letter*   		   				--de
+                                | "d" ("A".."Z" | "a".."d"|"f".."n" | "p".."z") letter* 				--d
+                                | ("A".."Z" | "a".."c" | "e".."z") letter*									--any
+                                | ""                                   
+    keyword = "dog" | "door" | "den"
+  }`,
   notDogDoorDenWithLookAround: `notDogDoorDenWithLookAround {
     notDogDoorDenWithLookAround = keyword letter+             --keywordPlusWhatever
                                   | ~keyword letter*          --Rest
